@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
-
-export const Button = styled.a`
+type ButtonPropsType = {
+    border?: string
+    background?: string
+    color?: string
+}
+export const Button = styled.a<ButtonPropsType>`
   padding: 19px 57px;
-  color: #F8EEEF;
-  background-color: #FB3F5C;
+  color: ${props => props.color || "#F8EEEF"};
+  background-color:  ${props => props.background || "#FB3F5C"};
+  border: ${prosp => prosp.border};
   border-radius: 18px;
   text-decoration: none;
 
