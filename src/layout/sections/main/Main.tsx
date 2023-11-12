@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import photo from '../../../assets/images/photo.webp'
 import {FlexWrapper} from "../../../components/FlexWrapper";
-import decor from '../../../assets/images/main-decor.webp'
 import {Button} from "../../../components/buttons/Button";
 import {Container} from "../../../components/Container";
 
