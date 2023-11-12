@@ -8,8 +8,8 @@ export const Menu = (props: { menuItems: Array<string> }) => {
     return (
         <StyledMenu>
             <ul>
-                {props.menuItems.map(item => {
-                    return <li>
+                {props.menuItems.map((item, index) => {
+                    return <li key={index}>
                         <a href="#">{item}</a>
                     </li>
                 })}

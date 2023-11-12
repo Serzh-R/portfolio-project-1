@@ -30,6 +30,7 @@ export const Main = () => {
 
 const StyledMain = styled.section`
   min-height: 100vh;
+  padding: 100px 0 87px;
 `
 
 const MainPhoto = styled.img`
