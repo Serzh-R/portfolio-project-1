@@ -16,7 +16,7 @@ export const Work = () => {
         <StyledWork>
             <Container>
                 <SectionTitle>Latest work</SectionTitle>
-                <FlexWrapper wrap={"wrap"} justify={"space-between"}>
+                <FlexWrapper wrap={"wrap"} justify={"center"}>
                     <WorkProject src={workPhoto1} title={"Project title"} text={"UI, Art drection"}/>
                     <WorkProject src={workPhoto2} title={"Project title"} text={"UI, Art drection"}/>
                     <WorkProject src={workPhoto3} title={"Project title"} text={"UI, Art drection"}/>
@@ -25,16 +25,21 @@ export const Work = () => {
                     <WorkProject src={workPhoto6} title={"Project title"} text={"UI, Art drection"}/>
                 </FlexWrapper>
             </Container>
-
         </StyledWork>
     );
 };
 
 const StyledWork = styled.section`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    padding: 180px 0 240px;
+    
+    ${SectionTitle}{
+        margin-bottom: 75px;
+    }
+    
+    ${FlexWrapper}{
+        column-gap: 45px;
+        row-gap: 60px;
+    }
 `
 
 

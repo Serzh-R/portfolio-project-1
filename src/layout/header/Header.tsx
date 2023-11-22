@@ -21,6 +21,12 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-  background-color: #FB3F5C;
-  padding: 25px 0;
+    background-color: #FB3F5C;
+    padding: 25px 0;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    right: 0;
+    
 `

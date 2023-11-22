@@ -9,6 +9,7 @@ export const theme ={
         clientsText: "#5D616F",
         clientsTitle: "#05060A",
         clientsRating: "#F4B600",
-        formFont: "#071A58"
+        formFont: "#071A58",
+        indicators: "#FEC5CE"
     }
 }

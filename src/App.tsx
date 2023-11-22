@@ -6,6 +6,7 @@ import {Contacts} from "./layout/sections/contacts/Contacts";
 import {Work} from "./layout/sections/work/Work";
 import {Footer} from "./layout/sections/footer/Footer";
 import {Skills} from "./layout/sections/skills/Skills";
+import {Indicators} from './layout/sections/indicators/Indicators';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Header/>
             <Main/>
             <Skills/>
+            <Indicators/>
             <Work/>
             <Clients/>
             <Contacts/>
