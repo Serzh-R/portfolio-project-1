@@ -11,5 +11,11 @@ export const theme ={
         clientsRating: "#F4B600",
         formFont: "#071A58",
         indicators: "#FEC5CE"
+    },
+
+    media:{
+        minDesktop: "screen and (max-width: 1024px)",
+        tablet: "screen and (max-width: 768px)",
+        mobile: "screen and (max-width: 576px)",
     }
 }

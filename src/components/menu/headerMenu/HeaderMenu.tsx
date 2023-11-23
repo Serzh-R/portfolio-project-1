@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from "styled-components";
-import {theme} from '../../styles/Theme';
+import {theme} from '../../../styles/Theme';
 
 // type MenuPropsType = {
 //     menuItems: Array<string>
 // }
-export const Menu = (props: { menuItems: Array<string> }) => {
+export const HeaderMenu = (props: { menuItems: Array<string> }) => {
     return (
-        <StyledMenu>
+        <StyledHeaderMenu>
             <ul>
                 {props.menuItems.map((item, index) => {
                     return <ListItem key={index}>
@@ -17,19 +17,23 @@ export const Menu = (props: { menuItems: Array<string> }) => {
                     </ListItem>
                 })}
             </ul>
-        </StyledMenu>
+        </StyledHeaderMenu>
     );
 };
 
-const StyledMenu = styled.nav`
-  ul {
-    display: flex;
-    gap: 40px;
-  }
+const StyledHeaderMenu = styled.nav`
+    ul {
+        display: flex;
+        gap: 40px;
+    }
+
+    @media ${theme.media.minDesktop} {
+        display: none;
+    }
 `
+
 const ListItem = styled.li`
     position: relative;
-    padding: 0 10px;
 
     &:before,
     &:after {
@@ -37,7 +41,7 @@ const ListItem = styled.li`
         position: absolute;
         width: 0;
         height: 2px;
-        background-color:  ${theme.colors.headerFooterFont};
+        background-color: ${theme.colors.headerFooterFont};
         bottom: 0;
         transition: width 0.3s;
     }
@@ -53,7 +57,7 @@ const ListItem = styled.li`
     &:hover {
         &:before,
         &:after {
-            width: 50%;
+            width: 55%;
         }
     }
 `
