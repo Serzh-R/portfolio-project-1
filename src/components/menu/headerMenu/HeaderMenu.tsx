@@ -27,7 +27,7 @@ const StyledHeaderMenu = styled.nav`
         gap: 40px;
     }
 
-    @media ${theme.media.minDesktop} {
+    @media ${theme.media.large} {
         display: none;
     }
 `

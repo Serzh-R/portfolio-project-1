@@ -7,11 +7,11 @@ export const MobileMenu = (props: { menuItems: Array<string> }) => {
     return (
         <StyledMobileMenu>
 
-            <BurgerButton isOpen={true}>
+            <BurgerButton isOpen={false}>
                 <span></span>
             </BurgerButton>
 
-            <MobileMenuPopup isOpen={true}>
+            <MobileMenuPopup isOpen={false}>
                 <ul>
                     {props.menuItems.map((item, index) => {
                         return <ListItem key={index}>
@@ -29,7 +29,7 @@ export const MobileMenu = (props: { menuItems: Array<string> }) => {
 const StyledMobileMenu = styled.nav`
     display: none;
 
-    @media ${theme.media.minDesktop} {
+    @media ${theme.media.large} {
         display: block;
     }
 `
@@ -59,8 +59,8 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
 `
 
 const BurgerButton = styled.button<{isOpen: boolean}>`
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     
     span {
         position: relative;
@@ -108,37 +108,44 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
 const ListItem = styled.li`
     position: relative;
 
-    &:before,
-    &:after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        background-color: ${theme.colors.headerFooterFont};
-        bottom: 0;
-        transition: width 0.3s;
-    }
-
-    &:before {
-        right: 50%;
-    }
-
-    &:after {
-        left: 50%;
-    }
-
-    &:hover {
+    @media screen and (min-width: ${theme.media.large}) {
         &:before,
         &:after {
-            width: 55%;
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: ${theme.colors.headerFooterFont};
+            bottom: 0;
+            transition: width 0.3s;
+        }
+
+        &:before {
+            right: 50%;
+        }
+
+        &:after {
+            left: 50%;
+        }
+
+        &:hover {
+            &:before,
+            &:after {
+                width: 55%;
+            }
         }
     }
+    
 `
 
 const Link = styled.a`
     font-size: 24px;
     font-weight: 400;
-    line-height: 33px;
+    line-height: 1.3;
     color: ${theme.colors.headerFooterFont};
+
+    @media ${theme.media.large} {
+        font-size: 34px;
+    }
 `
 

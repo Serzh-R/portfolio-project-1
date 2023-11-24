@@ -5,12 +5,13 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Button} from "../../../components/buttons/Button";
 import {Container} from "../../../components/Container";
 import {theme} from '../../../styles/Theme';
+import {font} from '../../../styles/Common';
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper justify={"space-between"} align={"center"}>
+                <FlexWrapper justify={"space-between"} align={"center"} wrap={"wrap-reverse"}>
                     <MainInfo>
                         <MainSubTitle>Hello,</MainSubTitle>
                         <MainTitle>I’m
@@ -33,58 +34,95 @@ export const Main = () => {
 const StyledMain = styled.section`
     min-height: 100vh;
     display: flex;
+
+    @media ${theme.media.extraLarge} {
+        ${FlexWrapper} {
+            justify-content: center;
+        }
+
+        ${Button} {
+            margin: 0 auto;
+        }
+    }
 `
 const MainInfo = styled.div`
     display: flex;
     flex-direction: column;
-    max-width: 480px;
+    max-width: 516px;
+
+    @media ${theme.media.extraLarge} {
+        text-align: center;
+       
+    }
 `
 const MainSubTitle =styled.span`
     font-size: 28px;
     font-weight: 400;
-    line-height: 38px;
+    line-height: 1.3;
 `
 const MainTitle = styled.h2`
-    font-family: Nunito, sans-serif;
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 68px;
+    ${font({
+        family: "Nunito, sans-serif", weight: 700, Fmax: 50, Fmin: 32
+    })}
+   
+    line-height: 1.4;
     color: ${theme.colors.titleFont};
     margin-bottom: 10px;
 
     span {
         display: inline-block;
         padding-left: 10px;
-        line-height: 65px;
         color: ${theme.colors.accent};
+    }
+
+    @media ${theme.media.mobile}{
+        margin-bottom: 8px;
     }
 `
 const MainText = styled.p`
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 33px;
+    ${font({
+        weight: 400, Fmax: 24, Fmin: 18
+    })}
+    
+    line-height: 1.4;
     letter-spacing: 0.06em;
     margin-bottom: 40px;
-
+    
+    @media ${theme.media.mobile}{
+        margin-bottom: 28px;
+    }
 `
 const PhotoWrapper = styled.div`
     margin-right: 35px;
     position: relative;
+
     
-    &:before{
+    
+    &:before {
         position: absolute;
         content: "";
-        width: 620px;
-        height: 692px;
         z-index: -1;
         top: -64px;
         left: -28px;
 
-        border-top: 346px solid transparent;
-        border-bottom: 346px solid ${theme.colors.mainDecor};
-        border-right: 310px solid ${theme.colors.mainDecor};
-        border-left: 310px solid transparent;
+        width: 0;
+        height: 0;
+        border-left: 0px solid transparent;
+        border-top: 690px solid transparent;
+        border-right: 620px solid ${theme.colors.mainDecor};
+
+       
+
+        @media ${theme.media.mobile} {
+           
+        }
     }
+
+    @media ${theme.media.large}{
+        margin-right: 0;
+        margin-top: 145px;
+    }
+
 `
 
 const MainPhoto = styled.img`
@@ -92,5 +130,10 @@ const MainPhoto = styled.img`
     width: 100%;
     height: 542px;
     object-fit: cover; 
+    
+    @media ${theme.media.mobile}{
+        width: 240px;
+        height: 300px;
+    }
 `
 
