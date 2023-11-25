@@ -2,17 +2,27 @@ import {theme} from './Theme';
 
 
 type FontPropsType = {
-    family?: string
-    weight?: number
+    ff?: string
+    fw?: number
     color?: string
-    lineHeight?: number
+    lh?: number
     Fmax?: number
     Fmin?: number
 }
-export const font = ({family, weight, color, lineHeight, Fmin, Fmax}: FontPropsType) => `
-    font-family: ${family || "Nunito Sans"};
-    font-weight: ${weight || 400};
+
+export const font = ({ff, fw, color, lh, Fmin, Fmax}: FontPropsType) => `
+    font-family: ${ff || "Nunito Sans"};
+    font-weight: ${fw || 400};
+    line-height: ${lh || 1.2};
     color: ${color || theme.colors.titleFont};
-    line-height: ${lineHeight || 1.2};
-    font-size: calc( (100vw - 374px)/(1440 - 374) * (${Fmax} - ${Fmin}) + ${Fmin}px);
+    
+    @media screen and (max-width: 767px) {
+       font-size: calc(${Fmin}px + ((${Fmax} - ${Fmin}) + (${Fmax} - ${Fmin}) * 0.7) * ((100vw - 374px) / 1440)); 
+    }
+    
+    @media screen and (min-width: 767px) {
+       font-size: calc(${Fmin}px + (${Fmax} - ${Fmin}) * (100vw / 1440)); 
+    }
 `
+
+//font-size: calc( (100vw - 374px)/(1440 - 374) * (${Fmax} - ${Fmin}) + ${Fmin}px);

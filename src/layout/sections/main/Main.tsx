@@ -11,7 +11,7 @@ export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper justify={"space-between"} align={"center"} wrap={"wrap-reverse"}>
+                <FlexWrapper justify={"space-between"} align={"center"}>
                     <MainInfo>
                         <MainSubTitle>Hello,</MainSubTitle>
                         <MainTitle>I’m
@@ -35,13 +35,21 @@ const StyledMain = styled.section`
     min-height: 100vh;
     display: flex;
 
-    @media ${theme.media.extraLarge} {
+    @media ${theme.media.large} {
         ${FlexWrapper} {
-            justify-content: center;
+            flex-direction: column-reverse;
+            gap: 120px;
         }
 
         ${Button} {
             margin: 0 auto;
+        }
+    }
+
+    @media ${theme.media.mobile} {
+        ${FlexWrapper} {
+            justify-content: flex-start;
+            gap: 90px;
         }
     }
 `
@@ -50,9 +58,12 @@ const MainInfo = styled.div`
     flex-direction: column;
     max-width: 516px;
 
-    @media ${theme.media.extraLarge} {
+    @media ${theme.media.large} {
         text-align: center;
-       
+    }
+    
+    @media ${theme.media.mobile} {
+        max-width: 308px;
     }
 `
 const MainSubTitle =styled.span`
@@ -62,10 +73,10 @@ const MainSubTitle =styled.span`
 `
 const MainTitle = styled.h2`
     ${font({
-        family: "Nunito, sans-serif", weight: 700, Fmax: 50, Fmin: 32
+        ff: "Nunito, sans-serif", fw: 700, Fmax: 50, Fmin: 32
     })}
    
-    line-height: 1.4;
+    line-height: 1.3;
     color: ${theme.colors.titleFont};
     margin-bottom: 10px;
 
@@ -81,10 +92,10 @@ const MainTitle = styled.h2`
 `
 const MainText = styled.p`
     ${font({
-        weight: 400, Fmax: 24, Fmin: 18
+        fw: 400, Fmax: 24, Fmin: 18
     })}
     
-    line-height: 1.4;
+    line-height: 1.3;
     letter-spacing: 0.06em;
     margin-bottom: 40px;
     
@@ -95,8 +106,6 @@ const MainText = styled.p`
 const PhotoWrapper = styled.div`
     margin-right: 35px;
     position: relative;
-
-    
     
     &:before {
         position: absolute;
@@ -114,7 +123,10 @@ const PhotoWrapper = styled.div`
        
 
         @media ${theme.media.mobile} {
-           
+            border-top: 376px solid transparent;
+            border-right: 306px solid ${theme.colors.mainDecor};
+            left: 0;
+            top: -30px;
         }
     }
 
@@ -130,7 +142,7 @@ const MainPhoto = styled.img`
     width: 100%;
     height: 542px;
     object-fit: cover; 
-    
+
     @media ${theme.media.mobile}{
         width: 240px;
         height: 300px;
