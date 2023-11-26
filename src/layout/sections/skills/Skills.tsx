@@ -6,6 +6,7 @@ import photo from "../../../assets/images/photo.webp";
 import {Button} from "../../../components/buttons/Button";
 import {LearningProgress} from '../../../components/progress/Progress';
 import {theme} from '../../../styles/Theme';
+import {font} from '../../../styles/Common';
 
 export const Skills = () => {
     return (
@@ -25,7 +26,8 @@ export const Skills = () => {
                         </SkillsText>
                         <SkillsButtons>
                             <Button href={"#"}>Download CV</Button>
-                            <Button href={"#"} color={"${theme.colors.accent}"} background={"#fff"} border={`1px solid ${theme.colors.accent}`}>View Portfolio</Button>
+                            <Button href={"#"} color={"${theme.colors.accent}"} background={"#fff"}
+                                    border={`1px solid ${theme.colors.accent}`}>View Portfolio</Button>
                         </SkillsButtons>
                         <SkillsProgress>
                             <LearningProgress icon={'ps'} percent={'70%'}/>
@@ -41,24 +43,39 @@ export const Skills = () => {
 
 const StyledSkills = styled.section`
     padding: 125px 0 165px;
-    
+
+    @media ${theme.media.large} {
+        ${FlexWrapper} {
+            flex-direction: column;
+        }
+    }
+
+    @media ${theme.media.mobile} {
+        padding: 0 0 100px;
+    }
+
 `
 const SkillsPhotoWrapper = styled.div`
     position: relative;
 
-    &:before{
+    &:before {
         position: absolute;
         content: "";
-        width: 388px;
-        height: 432px;
         z-index: -1;
-       right: -50px;
-        bottom: -50px;
+        top: 50px;
+        right: -50px;
 
-        border-top: 215px solid transparent;
-        border-bottom: 204px solid #F8EEEF;
-        border-right: 180px solid #F8EEEF;
-        border-left: 195px solid transparent;
+        width: 0;
+        height: 0;
+        border-top: 432px solid transparent;
+        border-right: 388px solid #F8EEEF;
+
+        @media ${theme.media.mobile} {
+            border-top-width: 336px;
+            border-right-width: 302px;
+            top: 38px;
+            right: -38px;
+        }
     }
 `
 
@@ -66,25 +83,46 @@ const SkillsPhoto = styled.img`
     max-width: 362px;
     width: 100%;
     object-fit: cover;
+
+    @media ${theme.media.large} {
+        margin-bottom: 100px;
+    }
+
+    @media ${theme.media.mobile} {
+        width: 280px;
+        height: 352px;
+        margin-bottom: 85px;
+    }
 `
 const SkillsInfo = styled.div`
     max-width: 598px;
     display: flex;
     flex-direction: column;
+
+    @media ${theme.media.extraLarge} {
+        max-width: 530px;
+    }
+
+   
 `
 const SkillsTitle = styled.h1`
-    font-family: Nunito, sans-serif;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 65px;
+    ${font({
+        ff: "Nunito, sans-serif", fw: 700, lh: 1.4, Fmax: 48, Fmin: 28
+    })}
+    
     margin-bottom: 16px;
     max-width: 505px;
+
+    @media ${theme.media.mobile} {
+        max-width: 324px;
+    }
 `
 
 const SkillsText = styled.p`
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 33px;
+    ${font({
+        fw: 400, lh: 1.4, Fmax: 24, Fmin: 18
+    })}
+    
     letter-spacing: 0.06em;
     margin-bottom: 50px;
 `
@@ -92,12 +130,34 @@ const SkillsButtons = styled.div`
     display: flex;
     gap: 38px;
     margin-bottom: 66px;
+
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        margin-bottom: 48px;
+    }
 `
 const SkillsProgress = styled.div`
     display: flex;
     flex-wrap: wrap;
     row-gap: 15px;
     column-gap: 58px;
+
+
+    @media ${theme.media.extraLarge} {
+        flex-direction: column;
+
+        div:nth-child(2) {
+            order: 1;
+        }
+
+    }
+
+    @media ${theme.media.mobile} {
+       align-items: center;
+        gap: 26px;
+    }
 `
 
 

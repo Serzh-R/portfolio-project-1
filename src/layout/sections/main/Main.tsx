@@ -35,6 +35,12 @@ const StyledMain = styled.section`
     min-height: 100vh;
     display: flex;
 
+    @media ${theme.media.extraLarge} {
+        ${FlexWrapper} {
+            justify-content: space-around;
+        }
+    }
+
     @media ${theme.media.large} {
         ${FlexWrapper} {
             flex-direction: column-reverse;
@@ -48,7 +54,7 @@ const StyledMain = styled.section`
 
     @media ${theme.media.mobile} {
         ${FlexWrapper} {
-            justify-content: flex-start;
+            justify-content: start;
             gap: 90px;
         }
     }
@@ -63,7 +69,7 @@ const MainInfo = styled.div`
     }
     
     @media ${theme.media.mobile} {
-        max-width: 308px;
+        max-width: 330px;
     }
 `
 const MainSubTitle =styled.span`
@@ -116,15 +122,14 @@ const PhotoWrapper = styled.div`
 
         width: 0;
         height: 0;
-        border-left: 0px solid transparent;
         border-top: 690px solid transparent;
         border-right: 620px solid ${theme.colors.mainDecor};
 
        
 
         @media ${theme.media.mobile} {
-            border-top: 376px solid transparent;
-            border-right: 306px solid ${theme.colors.mainDecor};
+            border-top-width: 376px;
+            border-right-width: 306px;
             left: 0;
             top: -30px;
         }
