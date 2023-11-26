@@ -19,8 +19,12 @@ export const WorkProject = (props: WorkProjectPropsType) => {
 };
 
 const StyledWorkProject = styled.div`
-    max-width: 330px;
-    width: 100%;
+    width: 330px;
+    flex-grow: 1;
+
+    @media ${theme.media.desktop} {
+        max-width: 330px;
+    }
 `
 const WorkPhoto = styled.img`
     margin-bottom: 25px;
@@ -32,14 +36,14 @@ const WorkTitle = styled.h3`
     font-family: Nunito, sans-serif;
     font-size: 20px;
     font-weight: 600;
-    line-height: 30px;
+    line-height: 1.5;
     color: ${theme.colors.cardFont};
 
 `
 const WorkText = styled.p`
     font-size: 17px;
     font-weight: 400;
-    line-height: 27px;
+    line-height: 1.5;
     color: ${theme.colors.cardFont};
 
 `

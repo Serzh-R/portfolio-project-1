@@ -7,7 +7,7 @@ export const Footer = () => {
     return (
         <StyledFooter>
             <ContactInfo>
-                <InfoTelephon><Icon iconId={"phone"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/><span>09028793244</span></InfoTelephon>
+                <InfoTelephon><Icon iconId={"phone"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/><span >09028793244</span></InfoTelephon>
                 <InfoMail><Icon iconId={"messages"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/><span>shalewa64@gmAil.com</span></InfoMail>
                 <InfoAddress>497 Evergreen Rd. Roseville, CA 95673</InfoAddress>
             </ContactInfo>
@@ -53,12 +53,15 @@ const ContactInfo = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 35px;
     font-family: Nunito, sans-serif;
     font-size: 24px;
     font-weight: 500;
     line-height: 1.3;
     color: ${theme.colors.headerFooterFont};
+    
+    
 `
 const InfoTelephon = styled.div`
    display: flex;

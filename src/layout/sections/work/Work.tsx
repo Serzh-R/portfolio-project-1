@@ -10,6 +10,7 @@ import workPhoto4 from '../../../assets/images/work-4.webp';
 import workPhoto5 from '../../../assets/images/work-5.webp';
 import workPhoto6 from '../../../assets/images/work-6.webp';
 import {Container} from "../../../components/Container";
+import {theme} from '../../../styles/Theme';
 
 export const Work = () => {
     return (
@@ -39,6 +40,16 @@ const StyledWork = styled.section`
     ${FlexWrapper}{
         column-gap: 45px;
         row-gap: 60px;
+    }
+
+    @media ${theme.media.tablet}{
+        padding: 100px 0;
+    }
+
+    @media ${theme.media.mobile}{
+        ${FlexWrapper}{
+            row-gap: 45px;
+        }
     }
 `
 

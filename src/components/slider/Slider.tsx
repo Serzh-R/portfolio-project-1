@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
 import slidePhoto from '../../assets/images/client-1.webp'
-import {theme} from '../../styles/Theme';
 import quotes from "../../assets/images/quotes.svg";
+import quotesMobile from "../../assets/images/quotes-mobile.svg";
 import {Icon} from '../icon/Icon';
+import {font} from '../../styles/Common';
+import {theme} from '../../styles/Theme';
 
 
 export const Slider = () => {
@@ -31,6 +33,7 @@ export const Slider = () => {
 
 const StyledSlider = styled.div`
     max-width: 726px;
+    width: 100%;
     margin: 0 auto;
 `
 const Slide = styled.div`
@@ -38,7 +41,6 @@ const Slide = styled.div`
     background-color: #fff;
     border-radius: 130px 0;
     text-align: center;
-    font-family: Poppins, sans-serif;
     position: relative;
 
     &::before {
@@ -46,6 +48,22 @@ const Slide = styled.div`
         position: absolute;
         top: 84px;
         left: 84px;
+
+        @media ${theme.media.tablet} {
+            content: url(${quotesMobile});
+            top: 70px;
+            left: 70px;
+        }
+    }
+
+    @media ${theme.media.tablet} {
+        border-radius: 100px 0;
+        padding: 40px;
+    }
+
+    @media ${theme.media.mobile} {
+        border-radius: 70px 0;
+        padding: 20px;
     }
 `
 
@@ -55,27 +73,46 @@ const SlidePhoto = styled.img`
     border-radius: 50%;
     margin-bottom: 20px;
     object-fit: cover;
+    
+    @media ${theme.media.mobile} {
+        width: 74px;
+        height: 74px;
+        margin-bottom: 2px;
+    }
 `
 const SlideTitle = styled.h3`
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 26px;
-    color: ${theme.colors.clientsTitle};
+    ${font({
+        ff: "Poppins, sans-serif", fw: 600, lh: 1.1, color: "${theme.colors.clientsTitle}", Fmax: 24, Fmin: 18
+    })}
 `
 const SlideSubTitle = styled.span`
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 26px;
+    ${font({
+        ff: "Poppins, sans-serif", fw: 400, lh: 1.4, color: "#FE2C54", Fmax: 18, Fmin: 14
+    })}
+    
     display: inline-block;
-    margin-bottom: 15px;
-    color: #FE2C54;
+    margin: 5px 0 15px;
+
+    @media ${theme.media.mobile} {
+        margin: 0px;
+    }
 `
 const SlideText = styled.p`
-    color: ${theme.colors.clientsText};
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 26px;
-    margin-bottom: 12px;
+    ${font({
+        ff: "Poppins, sans-serif", fw: 400, lh: 1.4, color: "${theme.colors.clientsTitle}", Fmax: 18, Fmin: 12
+    })}
+    
+    max-width: 534px;
+    width: 100%;
+    margin: 0 auto 12px;
+
+    @media ${theme.media.tablet} {
+        line-height: 2.1;
+    }
+
+    @media ${theme.media.mobile} {
+        margin: 0px;
+    }
 `
 
 const SlideRating = styled.div`

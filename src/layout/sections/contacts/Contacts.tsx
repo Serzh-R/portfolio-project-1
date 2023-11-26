@@ -34,6 +34,13 @@ const StyledContacts = styled.section`
     ${SectionTitle}{
         margin-bottom: 80px;
     }
+
+    @media ${theme.media.extraLarge} {
+        ${FlexWrapper}{
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 `
 const StyledForm = styled.form`
     max-width: 525px;
@@ -78,9 +85,9 @@ const Field = styled.input`
 `
 const StyledMap = styled.img`
     max-width: 512px;
+    min-width: 282px;
     width: 100%;
     object-fit: cover;
-
 `
 const StyledLabel = styled.label`
     font-size: 16px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {theme} from '../../../styles/Theme';
+import {font} from '../../../styles/Common';
 
 export const Indicators = () => {
     return (
@@ -17,6 +18,10 @@ export const Indicators = () => {
 const StyledIndicators = styled.div`
     background-color: ${theme.colors.indicators};
     padding: 60px 0;
+
+    @media ${theme.media.mobile}{
+        padding: 30px 0;
+    }
 `
 const IndicatorsWrapper = styled.div`
     max-width: 1220px;
@@ -45,16 +50,15 @@ const StyledIndicatorsItem = styled.div`
 `
 
 const Value = styled.span`
-    font-family: Nunito, sans-serif;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 65px;
-
+    ${font({
+        ff: "Nunito, sans-serif", fw: 700, lh: 1.3, Fmax: 48, Fmin: 12
+    })}
+    
 `
 const Description = styled.p`
+    ${font({
+        ff: "Nunito, sans-serif", fw: 700, lh: 1.4, Fmax: 36, Fmin: 11
+    })}
+    
     text-transform: uppercase;
-    font-family: Nunito, sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 49px;
 `
