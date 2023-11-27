@@ -51,7 +51,7 @@ const StyledSkills = styled.section`
     }
 
     @media ${theme.media.mobile} {
-        padding: 0 0 100px;
+        padding: 125px 0 100px;
     }
 
 `
@@ -62,7 +62,7 @@ const SkillsPhotoWrapper = styled.div`
         position: absolute;
         content: "";
         z-index: -1;
-        top: 50px;
+        top: 75px;
         right: -50px;
 
         width: 0;
@@ -73,7 +73,7 @@ const SkillsPhotoWrapper = styled.div`
         @media ${theme.media.mobile} {
             border-top-width: 336px;
             border-right-width: 302px;
-            top: 38px;
+            top: 57px;
             right: -38px;
         }
     }
@@ -114,7 +114,7 @@ const SkillsTitle = styled.h1`
     max-width: 505px;
 
     @media ${theme.media.mobile} {
-        max-width: 324px;
+        //width: 324px;
     }
 `
 

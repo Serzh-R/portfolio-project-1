@@ -6,6 +6,7 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import map from "../../../assets/images/map.webp"
 import {Button} from '../../../components/buttons/Button';
 import {theme} from '../../../styles/Theme';
+import {font} from '../../../styles/Common';
 
 export const Contacts = () => {
     return (
@@ -40,6 +41,20 @@ const StyledContacts = styled.section`
             flex-direction: column;
             align-items: center;
         }
+
+        ${SectionTitle}{
+            text-transform: uppercase;
+        }
+    }
+
+    @media ${theme.media.mobile}{
+        padding: 60px 0 100px;
+
+        ${SectionTitle}{
+            font-size: 28px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+        }
     }
 `
 const StyledForm = styled.form`
@@ -61,13 +76,39 @@ const StyledForm = styled.form`
     input:last-of-type{
         margin-bottom: 56px;
     }
+    
+    ${Button}{
+        cursor: pointer;
+    }
+
+    @media ${theme.media.extraLarge} {
+        ${Button}{
+            margin: 0 auto 50px;
+        }
+    }
+    
+    @media ${theme.media.mobile}{
+        width: 315px;
+
+        input:first-of-type{
+            margin-bottom: 22px;
+        }
+
+        input:last-of-type{
+            margin-bottom: 34px;
+        }
+
+        textarea{
+            height: 105px;
+            margin-bottom: 72px;
+        }
+    }
    
 `
 const Field = styled.input`
     width: 100%;
     border: 1px solid #00000033;
     padding: 14px;
-     
     font-size: 18px;
     font-weight: 400;
     color: ${theme.colors.formFont};
@@ -76,10 +117,20 @@ const Field = styled.input`
         font-size: 18px;
         font-weight: 400;
         color: ${theme.colors.formFont};
+
+        @media ${theme.media.mobile}{
+            font-size: 11px;
+            line-height: 1.3;
+        }
     }
     
     &:focus-visible{
         outline: 1px solid #00000033;
+    }
+
+    @media ${theme.media.mobile}{
+        font-size: 11px;
+        line-height: 1.3;
     }
     
 `
@@ -95,6 +146,11 @@ const StyledLabel = styled.label`
     line-height: 1.4;
     color: ${theme.colors.formFont};
     margin-bottom: 6px;
+
+    @media ${theme.media.mobile}{
+        font-size: 11px;
+        line-height: 1.3;
+    }
 `
 
 

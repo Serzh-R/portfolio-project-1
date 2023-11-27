@@ -6,27 +6,35 @@ import quotesMobile from "../../assets/images/quotes-mobile.svg";
 import {Icon} from '../icon/Icon';
 import {font} from '../../styles/Common';
 import {theme} from '../../styles/Theme';
+import {FlexWrapper} from '../FlexWrapper';
 
 
 export const Slider = () => {
     return (
         <StyledSlider>
-            <Slide>
-                <SlidePhoto src={slidePhoto} alt="SlidePhoto"/>
-                <SlideTitle>Adams Ademola</SlideTitle>
-                <SlideSubTitle>Happy Client</SlideSubTitle>
-                <SlideText>
-                    “Everyone working in the office is very knowledgeable
-                    about all types of dental work and options for your individual needs.”
-                </SlideText>
-                <SlideRating>
-                    <Icon iconId={"star"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
-                    <Icon iconId={"star"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
-                    <Icon iconId={"star"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
-                    <Icon iconId={"star"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
-                    <Icon iconId={"star"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
-                </SlideRating>
-            </Slide>
+            <FlexWrapper justify={"center"} align={"center"}>
+                <Slide>
+                    <SlidePhoto src={slidePhoto} alt="SlidePhoto"/>
+                    <SlideTitle>Adams Ademola</SlideTitle>
+                    <SlideSubTitle>Happy Client</SlideSubTitle>
+                    <SlideText>
+                        “Everyone working in the office is very knowledgeable
+                        about all types of dental work and options for your individual needs.”
+                    </SlideText>
+                    <SlideRating>
+                        <Icon iconId={"star"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
+                        <Icon iconId={"star"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
+                        <Icon iconId={"star"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
+                        <Icon iconId={"star"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
+                        <Icon iconId={"star"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
+                    </SlideRating>
+                </Slide>
+            </FlexWrapper>
+            <Pagination>
+                <span className={"active"}></span>
+                <span></span>
+                <span></span>
+            </Pagination>
         </StyledSlider>
     );
 };
@@ -35,7 +43,37 @@ const StyledSlider = styled.div`
     max-width: 726px;
     width: 100%;
     margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
 `
+const Pagination = styled.div`
+    span {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+
+        //&:not(:last-child){
+        //    margin-right: 10px;
+        //}
+        & + span {
+            margin-left: 10px;
+        }
+        
+        &.active{
+            background-color: #333333;
+        }
+    }
+    
+    @media ${theme.media.tablet}{
+        display: none;
+    }
+`
+
 const Slide = styled.div`
     padding: 57px;
     background-color: #fff;
@@ -53,6 +91,11 @@ const Slide = styled.div`
             content: url(${quotesMobile});
             top: 70px;
             left: 70px;
+        }
+
+        @media ${theme.media.mobile} {
+            top: 40px;
+            left: 40px;
         }
     }
 
