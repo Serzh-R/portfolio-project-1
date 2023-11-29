@@ -107,7 +107,7 @@ const SkillsInfo = styled.div`
 `
 const SkillsTitle = styled.h1`
     ${font({
-        ff: "Nunito, sans-serif", fw: 700, lh: 1.4, Fmax: 48, Fmin: 28
+        ff: "Nunito, sans-serif", fw: 700, lh: 1.4, FMax: 48, FMin: 28
     })}
     
     margin-bottom: 16px;
@@ -120,7 +120,7 @@ const SkillsTitle = styled.h1`
 
 const SkillsText = styled.p`
     ${font({
-        fw: 400, lh: 1.4, Fmax: 24, Fmin: 18
+        fw: 400, lh: 1.4, FMax: 24, FMin: 18
     })}
     
     letter-spacing: 0.06em;

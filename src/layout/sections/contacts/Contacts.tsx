@@ -6,7 +6,7 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import map from "../../../assets/images/map.webp"
 import {Button} from '../../../components/buttons/Button';
 import {theme} from '../../../styles/Theme';
-import {font} from '../../../styles/Common';
+import {changeSize} from '../../../styles/Common';
 
 export const Contacts = () => {
     return (
@@ -20,7 +20,7 @@ export const Contacts = () => {
                         <StyledLabel>Subject</StyledLabel>
                         <Field placeholder={"Question about your article"}/>
                         <Field as={"textarea"} placeholder={"Your message starts with…"}/>
-                        <Button>Send</Button>
+                        <Button as={"input"} type={"submit"}>Send</Button>
                     </StyledForm>
                     <StyledMap src={map}/>
                 </FlexWrapper>
@@ -33,7 +33,7 @@ const StyledContacts = styled.section`
     padding: 100px 0 160px;
 
     ${SectionTitle}{
-        margin-bottom: 80px;
+        margin-bottom: ${changeSize({FMax:80, FMin:40, Vmax:1440, Vmin:768})};;
     }
 
     @media ${theme.media.extraLarge} {
@@ -53,7 +53,7 @@ const StyledContacts = styled.section`
         ${SectionTitle}{
             font-size: 28px;
             line-height: 1.4;
-            margin-bottom: 40px;
+            //margin-bottom: 40px;
         }
     }
 `

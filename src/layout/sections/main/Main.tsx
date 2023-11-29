@@ -52,7 +52,14 @@ const StyledMain = styled.section`
         }
     }
 
+    @media ${theme.media.tablet}{
+        min-height: auto;
+    }
+    
     @media ${theme.media.mobile} {
+        ${Container}{
+            padding: 0 20px;
+        }
         ${FlexWrapper} {
             justify-content: start;
             gap: 90px;
@@ -72,14 +79,15 @@ const MainInfo = styled.div`
         max-width: 330px;
     }
 `
-const MainSubTitle =styled.span`
+const MainSubTitle = styled.span`
     font-size: 28px;
     font-weight: 400;
     line-height: 1.3;
 `
 const MainTitle = styled.h2`
+    
     ${font({
-        ff: "Nunito, sans-serif", fw: 700, Fmax: 50, Fmin: 32
+        ff: "Nunito, sans-serif", fw: 700, FMax: 50, FMin: 32
     })}
    
     line-height: 1.3;
@@ -98,7 +106,7 @@ const MainTitle = styled.h2`
 `
 const MainText = styled.p`
     ${font({
-        fw: 400, Fmax: 24, Fmin: 18
+        fw: 400, FMax: 24, FMin: 18
     })}
     
     line-height: 1.3;
@@ -125,7 +133,12 @@ const PhotoWrapper = styled.div`
         border-top: 690px solid transparent;
         border-right: 620px solid ${theme.colors.mainDecor};
 
-       
+        @media ${theme.media.tablet}{
+            border-top-width: 619px;
+            border-right-width: 508px;
+            top: -15px;
+            left: -18px;
+        }
 
         @media ${theme.media.mobile} {
             border-top-width: 376px;

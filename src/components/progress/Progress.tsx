@@ -8,18 +8,18 @@ type  LearningProgressType = {
     percent: string
 }
 export const LearningProgress = (props: LearningProgressType) => {
-   return (
-      <StyledProgress>
-         <Icon iconId={props.icon}/>
-              <Progress>
-                  <ProgressLine percent={props.percent}/>
-              </Progress>
-      </StyledProgress>
-   );
+    return (
+        <StyledProgress>
+            <Icon iconId={props.icon}/>
+            <Progress>
+                <ProgressLine percent={props.percent}/>
+            </Progress>
+        </StyledProgress>
+    );
 };
 
 
-const StyledProgress =styled.div`
+const StyledProgress = styled.div`
     display: flex;
     gap: 15px;
     max-width: 270px;
@@ -34,8 +34,8 @@ const Progress = styled.div`
     transform: translateY(-100%);
     align-self: flex-end;
 `
-const ProgressLine = styled.div<{percent:string}>`
-   position: relative;
+const ProgressLine = styled.div<{ percent: string }>`
+    position: relative;
     height: 100%;
     max-width: ${props => props.percent};
     background-color: ${theme.colors.accent};

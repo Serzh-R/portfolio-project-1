@@ -51,13 +51,13 @@ const StyledIndicatorsItem = styled.div`
 
 const Value = styled.span`
     ${font({
-        ff: "Nunito, sans-serif", fw: 700, lh: 1.3, Fmax: 48, Fmin: 12
+        ff: "Nunito, sans-serif", fw: 700, lh: 1.3, FMax: 48, FMin: 12
     })}
     
 `
 const Description = styled.p`
     ${font({
-        ff: "Nunito, sans-serif", fw: 700, lh: 1.4, Fmax: 36, Fmin: 11
+        ff: "Nunito, sans-serif", fw: 700, lh: 1.4, FMax: 36, FMin: 11
     })}
     
     text-transform: uppercase;

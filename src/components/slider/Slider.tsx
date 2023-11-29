@@ -125,12 +125,12 @@ const SlidePhoto = styled.img`
 `
 const SlideTitle = styled.h3`
     ${font({
-        ff: "Poppins, sans-serif", fw: 600, lh: 1.1, color: "${theme.colors.clientsTitle}", Fmax: 24, Fmin: 18
+        ff: "Poppins, sans-serif", fw: 600, lh: 1.1, color: "${theme.colors.clientsTitle}", FMax: 24, FMin: 18
     })}
 `
 const SlideSubTitle = styled.span`
     ${font({
-        ff: "Poppins, sans-serif", fw: 400, lh: 1.4, color: "#FE2C54", Fmax: 18, Fmin: 14
+        ff: "Poppins, sans-serif", fw: 400, lh: 1.4, color: "#FE2C54", FMax: 18, FMin: 14
     })}
     
     display: inline-block;
@@ -142,7 +142,7 @@ const SlideSubTitle = styled.span`
 `
 const SlideText = styled.p`
     ${font({
-        ff: "Poppins, sans-serif", fw: 400, lh: 1.4, color: "${theme.colors.clientsTitle}", Fmax: 18, Fmin: 12
+        ff: "Poppins, sans-serif", fw: 400, lh: 1.4, color: "${theme.colors.clientsTitle}", FMax: 18, FMin: 12
     })}
     
     max-width: 534px;

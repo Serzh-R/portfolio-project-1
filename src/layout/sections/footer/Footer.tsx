@@ -9,11 +9,11 @@ export const Footer = () => {
         <StyledFooter>
             <Container>
                 <ContactInfo>
-                    <InfoTelephon href={"+09028793244"}>
+                    <InfoTelephon href={"tel:+09028793244"}>
                         <Icon iconId={"phone"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
                         <span>09028793244</span>
                     </InfoTelephon>
-                    <InfoMail href={"shalewa64@gmAil.com"}>
+                    <InfoMail href={"mailto:shalewa64@gmAil.com"}>
                         <Icon iconId={"messages"} width={"26"} height={"26"} viewBox={"0 0 26 26"}/>
                         <span>shalewa64@gmAil.com</span>
                     </InfoMail>
