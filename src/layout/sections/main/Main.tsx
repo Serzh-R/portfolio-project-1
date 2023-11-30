@@ -34,6 +34,7 @@ export const Main = () => {
 const StyledMain = styled.section`
     min-height: 100vh;
     display: flex;
+    overflow: hidden;
 
     @media ${theme.media.extraLarge} {
         ${FlexWrapper} {

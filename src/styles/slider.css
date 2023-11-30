@@ -1,0 +1,11 @@
+
+.alice-carousel__dots {
+    margin-top: 40px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.alice-carousel__dots-item:not(.__custom):not(:last-child){
+    margin-right: 10px;
+}

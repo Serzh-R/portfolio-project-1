@@ -84,7 +84,7 @@ const ContactInfo = styled.div`
 
     @media ${theme.media.mobile} {
         flex-direction: column;
-        row-gap: 10px;
+        row-gap: 20px;
         width: 286px;
         text-align: center;
         margin: 0 auto 35px;
